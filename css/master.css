@@ -1,0 +1,161 @@
+:root {
+  --paper-white: #F9F6F2;
+  --light-warm-gray: #D6D1CA;
+  --medium-warm-gray: #918B88;
+  --charcoal: #514D4A;
+}
+
+body {
+  background-color: var(--paper-white);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: var(--charcoal);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: Bookmania;
+  font-weight: 400;
+  color: var(--charcoal);
+}
+
+.bg-secondary {
+  background-color: var(--medium-warm-gray) !important;
+}
+
+.btn-primary {
+  background-color: var(--light-warm-gray);
+  border-color: var(--light-warm-gray);
+  color: var(--charcoal);
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: var(--charcoal) !important;
+  border-color: var(--charcoal);
+  color: var(--paper-white);
+}
+
+.btn-secondary {
+  background-color: var(--charcoal);
+  color: var(--light-warm-gray);
+  border: solid 2px var(--charcoal);
+  box-shadow: 0px 0px 0px var(--charcoal);
+}
+
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
+  background-color: var(--light-warm-gray) !important;
+  border-color: var(--light-warm-gray);
+  color: var(--charcoal);
+  /*box-shadow: 0px 1px 3px var(--charcoal);*/
+}
+
+.card {
+  background-color: var(--paper-white);
+  transform: rotateY(0deg);
+  transition: all 500ms ease-in-out;
+}
+
+.card-price {
+  color: var(--charcoal);
+  font-family: Bookmania;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1;
+  margin-top: 1rem;
+}
+.card-price::before {
+  content: '$';
+  font-size: 50%;
+  font-weight: 500;
+  position: relative;
+  top: -1rem;
+}
+
+.card-subhead {
+  color: var(--medium-warm-gray);
+  font-weight: 400;
+  margin: 0;
+  font-size: .75rem;
+}
+
+.card-text, .card-subtext {
+  color: var(--medium-warm-gray);
+  font-size: .875rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  line-height: 1.125;
+}
+
+.card-text div {
+  margin-bottom: 0.625rem;
+
+}
+
+.card-subtext {
+  font-size: .675rem;
+}
+
+.card-title {
+  font-size: 1.45rem;
+}
+
+.bg-secondary .card-title, .bg-secondary .card-price, .bg-secondary .card-text {
+  color: var(--paper-white);
+}
+
+.device-grid {
+  perspective: 2000px;
+  opacity: 1;
+  transition: all 500ms ease-in-out;
+}
+.device-grid.off {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.device-grid .card {
+  width: 400px;
+  height: 400px;
+  margin: .5rem;
+  border: solid 5px var(--light-warm-gray);
+  border-radius: 8px;
+  backface-visibility: hidden;
+}
+
+.device-grid .card.bg-secondary {
+  border: solid 0px var(--light-warm-gray);
+}
+
+.fade, .modal.fade .modal-dialog {
+  transition-delay: 0ms;
+}
+
+.fade.show, .modal.fade.show .modal-dialog {
+  transition-delay: 100ms;
+}
+
+.modal-backdrop.show {
+  opacity: 0;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.page-header {
+  display: block;
+  margin: 0 auto;
+  width: 400px;
+}
+
+/* This code below corrects the header's position on the page to match with the number of items across */
+@media only screen and (min-width: 880px) {
+  .page-header {
+    width: calc(800px + .5rem);
+  }
+}
+
+@media only screen and (min-width: 1296px) {
+  .page-header {
+    width: calc(1200px + 1rem);
+  }
+}

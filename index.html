@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Device Selection | Company Name</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/master.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="container-fluid py-5">
+      <div class="page-header"><h3>Device Selection</h3></div>
+
+      <div class="d-flex flex-wrap justify-content-center device-grid">
+        <div class="card d-flex flex-row align-items-center">
+          <div class="col-5 p-0"><img src="https://static.toiimg.com/thumb/msid-69219502,width-220,resizemode-4,imgv-5/Google-Pixel-4-XL.jpg" alt="" class="card-img"></div>
+          <div class="col">
+            <div class="card-body">
+              <p class="card-subhead">Google</p>
+              <h5 class="card-title">Pixel 4</h5>
+              <p class="card-price">249</p>
+              <div class="card-text">
+                <div>5.45" display</div>
+                <div>16MP camera</div>
+                <div>Snap Dragon processor</div>
+              </div>
+              <div class="card-subtext">
+                <div>Includes 1yr Subscription to WiseOS / a $99 value</div>
+              </div>
+              <button class="btn btn-sm btn-primary btn-block" onclick="flip('0');"  data-toggle="modal" data-target="#deviceModal1" data-backdrop="static" data-keyboard="false">Select</button>
+            </div>
+          </div>
+        </div>
+
+          <div class="card d-flex flex-row align-items-center">
+            <div class="col-5 p-0"><img src="https://www.boostmobile.com/content/dam/boostmobile/en/products/phones/samsung/galaxy-s20/device-back.png.transform/pdpCarousel/image.jpg" alt="" class="card-img"></div>
+            <div class="col">
+              <div class="card-body">
+                <p class="card-subhead">Samsung</p>
+                <h5 class="card-title">Galaxy S20 5G</h5>
+                <p class="card-price">199</p>
+                <div class="card-text">
+                  <div>5.45" display</div>
+                  <div>16MP camera</div>
+                  <div>Snap Dragon processor</div>
+                </div>
+                <div class="card-subtext">
+                  <div>Includes 1yr Subscription to WiseOS / a $99 value</div>
+                </div>
+                <button class="btn btn-sm btn-primary btn-block"  onclick="flip('1');" data-toggle="modal" data-target="#deviceModal2" data-backdrop="static" data-keyboard="false">Select</button>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="card bg-secondary d-flex flex-row align-items-center">
+            <div class="col">
+              <div class="card-body">
+                <p class="card-subhead">&nbsp;</p>
+                <h5 class="card-title">Bring Your Own Device</h5>
+                <p class="card-price">0.00</p>
+                <div class="card-text">
+                  <div>Set up your own device</div>
+                  <div>&nbsp;</div>
+                  <div>&nbsp;</div>
+                </div>
+                <div class="card-subtext">
+                  <div>&nbsp;</div>
+                  <div>&nbsp;</div>
+                </div>
+                <a href="#" class="btn btn-sm btn-secondary btn-block">Select</a>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="card" style="visibility: hidden;">
+              <p>test</p>
+          </div>
+
+      </div>
+
+
+    </div>
+
+    <div class="modal fade" id="deviceModal1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="flip('0');">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body d-flex">
+            <div class="col-5 p-0"><img src="https://static.toiimg.com/thumb/msid-69219502,width-220,resizemode-4,imgv-5/Google-Pixel-4-XL.jpg" alt="" class="card-img"></div>
+            <div class="col">
+              <h4>Google Pixel 4</h4>
+              <div class="row options">
+                <div class="col">
+                  red
+                </div>
+                <div class="col">
+                  green
+                </div>
+                <div class="col">
+                  blue
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn btn-primary">Continue</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="deviceModal2">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="flip('1');">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body d-flex">
+            <div class="col-5 p-0"><img src="https://www.boostmobile.com/content/dam/boostmobile/en/products/phones/samsung/galaxy-s20/device-back.png.transform/pdpCarousel/image.jpg" alt="" class="card-img"></div>
+            <div class="col">
+              <h4>Samsung Galaxy S20 5G</h4>
+              <div class="row options">
+                <div class="col">
+                  red
+                </div>
+                <div class="col">
+                  green
+                </div>
+                <div class="col">
+                  blue
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="btn btn-primary">Continue</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>
