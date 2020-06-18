@@ -9,83 +9,93 @@
 
   </head>
   <body>
-    <div class="container-fluid py-5">
-      <div class="page-header"><h3>Device Selection</h3></div>
-
-      <div class="d-flex flex-wrap justify-content-center device-grid">
-        <div class="card d-flex flex-row align-items-center">
-          <div class="col-5 p-0"><img src="https://static.toiimg.com/thumb/msid-69219502,width-220,resizemode-4,imgv-5/Google-Pixel-4-XL.jpg" alt="" class="card-img"></div>
-          <div class="col">
-            <div class="card-body">
-              <p class="card-subhead">Google</p>
-              <h5 class="card-title">Pixel 4</h5>
-              <p class="card-price">249</p>
-              <div class="card-text">
-                <div>5.45" display</div>
-                <div>16MP camera</div>
-                <div>Snap Dragon processor</div>
-              </div>
-              <div class="card-subtext">
-                <div>Includes 1yr Subscription to WiseOS / a $99 value</div>
-              </div>
-              <button class="btn btn-sm btn-primary btn-block" onclick="flip('0');"  data-toggle="modal" data-target="#deviceModal1" data-backdrop="static" data-keyboard="false">Select</button>
-            </div>
-          </div>
-        </div>
-
-          <div class="card d-flex flex-row align-items-center">
-            <div class="col-5 p-0"><img src="https://www.boostmobile.com/content/dam/boostmobile/en/products/phones/samsung/galaxy-s20/device-back.png.transform/pdpCarousel/image.jpg" alt="" class="card-img"></div>
-            <div class="col">
-              <div class="card-body">
-                <p class="card-subhead">Samsung</p>
-                <h5 class="card-title">Galaxy S20 5G</h5>
-                <p class="card-price">199</p>
-                <div class="card-text">
-                  <div>5.45" display</div>
-                  <div>16MP camera</div>
-                  <div>Snap Dragon processor</div>
-                </div>
-                <div class="card-subtext">
-                  <div>Includes 1yr Subscription to WiseOS / a $99 value</div>
-                </div>
-                <button class="btn btn-sm btn-primary btn-block"  onclick="flip('1');" data-toggle="modal" data-target="#deviceModal2" data-backdrop="static" data-keyboard="false">Select</button>
-              </div>
-            </div>
-          </div>
-
-
-
-          <div class="card bg-secondary d-flex flex-row align-items-center">
-            <div class="col">
-              <div class="card-body">
-                <p class="card-subhead">&nbsp;</p>
-                <h5 class="card-title">Bring Your Own Device</h5>
-                <p class="card-price">0.00</p>
-                <div class="card-text">
-                  <div>Set up your own device</div>
-                  <div>&nbsp;</div>
-                  <div>&nbsp;</div>
-                </div>
-                <div class="card-subtext">
-                  <div>&nbsp;</div>
-                  <div>&nbsp;</div>
-                </div>
-                <a href="#" class="btn btn-sm btn-secondary btn-block">Select</a>
-              </div>
-            </div>
-          </div>
-
-
-
-          <div class="card" style="visibility: hidden;">
-              <p>test</p>
-          </div>
-
+    <div class="row m-0">
+      <div class="d-none d-md-block col col-md-1">
+        <a href="https://techless.com" target="_blank" class="img nav-img"><img src="https://portal.techless.com/logo.png"  alt="Techless logo"></a>
       </div>
+      <div class="col">
+        <div class="container-fluid py-5 fade">
+          <div class="page-header mb-5 pb-5"><h3>Device Selection</h3></div>
+
+          <div class="d-flex flex-wrap justify-content-center device-grid">
+            <div class="card d-flex flex-row align-items-center">
+              <div class="col-5 p-0"><img src="https://static.toiimg.com/thumb/msid-69219502,width-220,resizemode-4,imgv-5/Google-Pixel-4-XL.jpg" alt="" class="card-img"></div>
+              <div class="col">
+                <div class="card-body">
+                  <p class="card-subhead">Google</p>
+                  <h5 class="card-title">Pixel 4</h5>
+                  <p class="card-price">249</p>
+                  <div class="card-text">
+                    <div>5.45" display</div>
+                    <div>16MP camera</div>
+                    <div>Snap Dragon processor</div>
+                  </div>
+                  <div class="card-subtext">
+                    <div>Includes 1yr Subscription to WiseOS / a $99 value</div>
+                  </div>
+                  <button class="btn btn-sm btn-primary btn-block" onclick="flip('0');"  data-toggle="modal" data-target="#deviceModal1" data-backdrop="static" data-keyboard="false">Select</button>
+                </div>
+              </div>
+            </div>
+
+              <div class="card d-flex flex-row align-items-center">
+                <div class="col-5 p-0"><img src="https://www.boostmobile.com/content/dam/boostmobile/en/products/phones/samsung/galaxy-s20/device-back.png.transform/pdpCarousel/image.jpg" alt="" class="card-img"></div>
+                <div class="col">
+                  <div class="card-body">
+                    <p class="card-subhead">Samsung</p>
+                    <h5 class="card-title">Galaxy S20 5G</h5>
+                    <p class="card-price">199</p>
+                    <div class="card-text">
+                      <div>5.45" display</div>
+                      <div>16MP camera</div>
+                      <div>Snap Dragon processor</div>
+                    </div>
+                    <div class="card-subtext">
+                      <div>Includes 1yr Subscription to WiseOS / a $99 value</div>
+                    </div>
+                    <button class="btn btn-sm btn-primary btn-block"  onclick="flip('1');" data-toggle="modal" data-target="#deviceModal2" data-backdrop="static" data-keyboard="false">Select</button>
+                  </div>
+                </div>
+              </div>
 
 
+
+              <div class="card bg-secondary d-flex flex-row align-items-center">
+                <div class="col">
+                  <div class="card-body">
+                    <p class="card-subhead">&nbsp;</p>
+                    <h5 class="card-title">Bring Your Own Device</h5>
+                    <p class="card-price">0.00</p>
+                    <div class="card-text">
+                      <div>Set up your own device</div>
+                      <div>&nbsp;</div>
+                      <div>&nbsp;</div>
+                    </div>
+                    <div class="card-subtext">
+                      <div>&nbsp;</div>
+                      <div>&nbsp;</div>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-secondary btn-block">Select</a>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <div class="card" style="visibility: hidden;">
+                  <p>test</p>
+              </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="d-none d-md-block col col-md-1">
+        &nbsp;
+      </div>
     </div>
 
+    <form action="" name="pixelForm" onsubmit="return validateForm(this.name)" method="post">
     <div class="modal fade" id="deviceModal1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -94,32 +104,89 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body d-flex">
+          <div class="modal-body d-flex align-items-center">
             <div class="col-5 p-0"><img src="https://static.toiimg.com/thumb/msid-69219502,width-220,resizemode-4,imgv-5/Google-Pixel-4-XL.jpg" alt="" class="card-img"></div>
             <div class="col">
               <h4>Google Pixel 4</h4>
-              <div class="row options">
-                <div class="col">
-                  red
+                <h5>Colors</h5>
+                <div class="form-row text-center align-items-center justify-content-between color-options">
+                  <div class="col">
+                    <input class="form-check-input" type="radio" name="colors" id="colorsWhite" value="white" />
+                    <label class="form-check-label" for="colorsWhite">white</label>
+                  </div>
+                  <div class="col">
+                    <input class="form-check-input" type="radio" name="colors" id="colorsBlack" value="black"  />
+                    <label class="form-check-label" for="colorsBlack">black</label>
+                  </div>
+                  <div class="col">
+                    <input class="form-check-input" type="radio" name="colors" id="colorsRed" value="red" />
+                    <label class="form-check-label" for="colorsRed">red</label>
+                  </div>
                 </div>
-                <div class="col">
-                  green
+                <div class="my-4 spacer"></div>
+                <h5>Capacity</h5>
+                <div class="form-row text-center align-items-center justify-content-between capacity-options">
+                  <div class="col">
+                    <input class="form-check-input" type="radio" name="capacity" id="gb64" value="64 GB" />
+                    <label class="form-check-label" for="gb64">
+                      <div class="capacity-size">
+                        64
+                      </div>
+                      <div class="capacity-price">
+                        $249
+                      </div>
+                    </label>
+                  </div>
+                  <div class="col">
+                    <input class="form-check-input" type="radio" name="capacity" id="gb128" value="128 GB"  />
+                    <label class="form-check-label" for="gb128">
+                      <div class="capacity-size">
+                        128
+                      </div>
+                      <div class="capacity-price">
+                        $350
+                      </div>
+                    </label>
+                  </div>
                 </div>
-                <div class="col">
-                  blue
+                <div class="my-4 spacer"></div>
+                <h5>Carrier</h5>
+                <div class="form-row text-center align-items-center justify-content-between carrier-options">
+                  <div class="col">
+                    <input class="form-check-input" type="radio" name="carrier" id="abn" value="America's Best Network" />
+                    <label class="form-check-label" for="abn">
+                      <div class="carrier-type">
+                        America's Best Network
+                      </div>
+                      <div class="carrier-price">
+                        $20/month
+                      </div>
+                    </label>
+                  </div>
+                  <div class="col">
+                    <input class="form-check-input" type="radio" name="carrier" id="nocarrier" value="no carrier"  />
+                    <label class="form-check-label" for="nocarrier">
+                      <div class="carrier-type">
+                        No Carrier
+                      </div>
+                      <div class="carrier-price">
+                        You provide your own SIM card and plan&nbsp;/&nbsp;$0
+                      </div>
+                    </label>
+                  </div>
                 </div>
-              </div>
             </div>
           </div>
           <div class="modal-footer">
-            <a href="#" class="btn btn-primary">Continue</a>
+            <input type="submit" class="btn btn-primary" value="Continue" />
           </div>
         </div>
       </div>
     </div>
+    </form>
 
     <div class="modal fade" id="deviceModal2">
-      <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="flip('1');">

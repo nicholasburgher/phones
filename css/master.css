@@ -70,6 +70,14 @@ h1, h2, h3, h4, h5 {
   top: -1rem;
 }
 
+.card-price::after {
+  content: " and up";
+  font-size: 30%;
+  font-family: 'Roboto', sans-serif;
+  font-style: oblique;
+  color: var(--medium-warm-gray);
+}
+
 .card-subhead {
   color: var(--medium-warm-gray);
   font-weight: 400;
@@ -136,6 +144,16 @@ h1, h2, h3, h4, h5 {
 .modal-backdrop.show {
   opacity: 0;
 }
+.nav-img {
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  display: block;
+  width: 88.55px;
+}
+.nav-img img {
+  width: 100%;
+}
 
 .card.flipped {
   transform: rotateY(180deg);
@@ -148,14 +166,78 @@ h1, h2, h3, h4, h5 {
 }
 
 /* This code below corrects the header's position on the page to match with the number of items across */
-@media only screen and (min-width: 880px) {
+@media (min-width: 1087px) {
   .page-header {
     width: calc(800px + .5rem);
   }
+  .modal-dialog {
+    max-width: 800px !important;
+  }
 }
 
-@media only screen and (min-width: 1296px) {
+@media only screen and (min-width: 1587px) {
   .page-header {
     width: calc(1200px + 1rem);
   }
+}
+
+/* F O R M */
+.color-options input[type=radio], .capacity-options input[type=radio], .carrier-options input[type=radio] {
+  display: none;
+}
+.color-options label, .capacity-options label, .carrier-options label {
+  cursor: pointer;
+  color: var(--charcoal);
+  display: block;
+  padding: 10px;
+  min-height: 90px;
+  border-radius: 8px;
+  border: solid 3px var(--paper-white);
+  transition: all ease-in-out 500ms;
+}
+
+
+
+.capacity-options label .capacity-size {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.capacity-options label .capacity-size::after {
+  content: 'GB';
+  font-size: 50%;
+}
+
+.capacity-options label .capacity-price, .carrier-options label .carrier-price, .color-options label {
+  font-size: .75rem;
+}
+
+.carrier-options label .carrier-type {
+  font-weight: 700;
+}
+
+
+
+
+
+.color-options label::before {
+  display: block;
+  content: '•';
+  font-size: 5rem;
+  line-height: .5;
+}
+
+.color-options input[value=red] + label::before {
+  color: red;
+}
+.color-options input[value=white] + label::before {
+  color: #ddd;
+}
+.color-options input[value=black] + label::before {
+  color: #444;
+}
+.color-options input:checked + label, .capacity-options input:checked + label, .carrier-options input:checked + label {
+  border-color: var(--medium-warm-gray);
+  border: solid 3px var(--medium-warm-gray);
+
 }
