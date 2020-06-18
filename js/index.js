@@ -29,3 +29,5 @@ function validateForm(form) {
   }
   document.forms[form].setAttribute("action","index.html?color=" + color + "&capacity=" + capacity + "&carrier=" + carrier );
 }
+
+//version 1.2
