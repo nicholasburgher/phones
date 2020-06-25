@@ -122,11 +122,17 @@ h1, h2, h3, h4, h5 {
 
 .device-grid .card {
   width: 400px;
-  height: 400px;
+  
   margin: .5rem;
   border: solid 5px var(--light-warm-gray);
   border-radius: 8px;
   backface-visibility: hidden;
+}
+
+@media (min-width: 400px) {
+  .device-grid .card {
+    height: 400px;
+  }
 }
 
 .device-grid .card.bg-secondary {
@@ -162,10 +168,15 @@ h1, h2, h3, h4, h5 {
 .page-header {
   display: block;
   margin: 0 auto;
-  width: 400px;
+  width: 100%;
 }
 
 /* This code below corrects the header's position on the page to match with the number of items across */
+@media (min-width: 400px) {
+  .page-header {
+    width: 400px;
+  }
+}
 @media (min-width: 1087px) {
   .page-header {
     width: calc(800px + .5rem);
