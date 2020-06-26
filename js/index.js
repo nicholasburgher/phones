@@ -12,6 +12,7 @@ window.onload = function() {
 
 function validateForm(form) {
   console.log(form);
+  var device = document.forms[form]["device"].value;
   var color = document.forms[form]["colors"].value;
   var capacity = document.forms[form]["capacity"].value;
   var carrier = document.forms[form]["carrier"].value;
@@ -27,7 +28,7 @@ function validateForm(form) {
     alert("You must select a carrier");
     return false;
   }
-  document.forms[form].setAttribute("action","index.html?color=" + color + "&capacity=" + capacity + "&carrier=" + carrier );
+  document.forms[form].setAttribute("action","index.html?device=" + device + "&color=" + color + "&capacity=" + capacity + "&carrier=" + carrier );
 }
 
 //version 1.2
