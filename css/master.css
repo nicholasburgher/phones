@@ -27,6 +27,9 @@ h1, h2, h3, h4, h5 {
   border-color: var(--light-warm-gray);
   color: var(--charcoal);
 }
+.badge-primary {
+  background-color: var(--medium-warm-gray);
+}
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background-color: var(--charcoal) !important;
@@ -57,11 +60,14 @@ h1, h2, h3, h4, h5 {
 .card-price {
   color: var(--charcoal);
   font-family: Bookmania;
-  font-size: 2.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
   line-height: 1;
   margin-top: 1rem;
 }
+
+/* OLD '$' CODE INCLUSION
+
 .card-price::before {
   content: '$';
   font-size: 50%;
@@ -70,9 +76,11 @@ h1, h2, h3, h4, h5 {
   top: -1rem;
 }
 
+*/
+
 .card-price::after {
-  content: " and up";
-  font-size: 30%;
+  content: "/ month";
+  font-size: 60%;
   font-family: 'Roboto', sans-serif;
   font-style: oblique;
   color: var(--medium-warm-gray);
@@ -97,13 +105,22 @@ h1, h2, h3, h4, h5 {
   margin-bottom: 0.625rem;
 
 }
+.card-text {
+  display: none;
+}
 
 .card-subtext {
   font-size: .675rem;
 }
 
-.card-title {
+h5.card-title {
+  display: inline;
   font-size: 1.45rem;
+}
+.badge-pill {
+  vertical-align: super;
+  font-weight: 400;
+  /*text-transform: uppercase;*/
 }
 
 .bg-secondary .card-title, .bg-secondary .card-price, .bg-secondary .card-text {
@@ -122,16 +139,18 @@ h1, h2, h3, h4, h5 {
 
 .device-grid .card {
   width: 400px;
-  
   margin: .5rem;
-  border: solid 5px var(--light-warm-gray);
-  border-radius: 8px;
+  border: solid 3px var(--light-warm-gray);
+  border-radius: 20px;
   backface-visibility: hidden;
+}
+.device-grid .card.d-flex.flex-row.align-items-center {
+  padding: 1.75rem !important;
 }
 
 @media (min-width: 400px) {
   .device-grid .card {
-    height: 400px;
+    /*height: 400px;*/
   }
 }
 
