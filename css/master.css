@@ -3,6 +3,8 @@
   --light-warm-gray: #D6D1CA;
   --medium-warm-gray: #918B88;
   --charcoal: #514D4A;
+  --alternate: #d29074;
+  --alternate-hover: hsla(18, 61.1%, 70%, 1); /*original hsla(18, 51.1%, 63.9%, 1); */
 }
 
 body {
@@ -31,8 +33,8 @@ h1, h2, h3, h4, h5 {
   background-color: var(--medium-warm-gray);
 }
 
-.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background-color: var(--charcoal) !important;
+.btn-primary:hover, .btn-primary:focus, .btn-primary:not(:disabled):not(.disabled):active {
+  background-color: var(--charcoal);
   border-color: var(--charcoal);
   color: var(--paper-white);
 }
@@ -45,7 +47,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
-  background-color: var(--light-warm-gray) !important;
+  background-color: var(--light-warm-gray);
   border-color: var(--light-warm-gray);
   color: var(--charcoal);
   /*box-shadow: 0px 1px 3px var(--charcoal);*/
@@ -141,11 +143,29 @@ h5.card-title {
   width: 400px;
   margin: .5rem;
   border: solid 3px var(--light-warm-gray);
-  border-radius: 20px;
   backface-visibility: hidden;
 }
 .device-grid .card.d-flex.flex-row.align-items-center {
   padding: 1.75rem !important;
+}
+
+.device-grid .img-column {
+  perspective: 1000px;
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.img-column img {
+  backface-visibility: hidden;
+  transform: rotateY(0deg);
+  transition: all 1000ms ease-in-out;
+}
+
+.img-column img.flipped {
+  transform: rotateY(-90deg);
+  transition: all 500ms ease-in-out;
 }
 
 @media (min-width: 400px) {
@@ -158,6 +178,8 @@ h5.card-title {
   border: solid 0px var(--light-warm-gray);
 }
 
+/* Modal */
+
 .fade, .modal.fade .modal-dialog {
   transition-delay: 0ms;
 }
@@ -169,6 +191,42 @@ h5.card-title {
 .modal-backdrop.show {
   opacity: 0;
 }
+
+.modal-header, .modal-footer {
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.modal-header {
+  padding: 1.2rem 1.6rem;
+}
+
+.modal .card-img {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: all 300ms ease-in-out;
+}
+
+.modal .card-img.off {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 300ms ease-in-out;
+}
+
+.modal-footer input[type="submit"] {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.modal-content, .device-grid .card {
+  border-radius: 20px;
+}
+.modal-footer .footer-text a {
+  color: var(--medium-warm-gray);
+  font-size: 1rem;
+}
+
+/* Nav Image */
 .nav-img {
   position: absolute;
   top: 30px;
@@ -178,10 +236,6 @@ h5.card-title {
 }
 .nav-img img {
   width: 100%;
-}
-
-.card.flipped {
-  transform: rotateY(180deg);
 }
 
 .page-header {
@@ -212,10 +266,10 @@ h5.card-title {
 }
 
 /* F O R M */
-.color-options input[type=radio], .capacity-options input[type=radio], .carrier-options input[type=radio] {
+.color-options input[type=radio], .capacity-options input[type=radio], .plan-options input[type=radio] {
   display: none;
 }
-.color-options label, .capacity-options label, .carrier-options label {
+.color-options label, .capacity-options label, .plan-options label {
   cursor: pointer;
   color: var(--charcoal);
   display: block;
@@ -238,17 +292,17 @@ h5.card-title {
   font-size: 50%;
 }
 
-.capacity-options label .capacity-price, .carrier-options label .carrier-price, .color-options label {
+.capacity-options label .capacity-price, .plan-options label .plan-price, .color-options label {
   font-size: .75rem;
 }
 
-.carrier-options label .carrier-type {
+.plan-options label .plan-type {
   font-weight: 700;
 }
 
 
 
-
+/* C O L O R S */
 
 .color-options label::before {
   display: block;
@@ -260,14 +314,50 @@ h5.card-title {
 .color-options input[value=red] + label::before {
   color: red;
 }
+.color-options input[value=blue] + label::before {
+  color: blue;
+}
 .color-options input[value=white] + label::before {
   color: #ddd;
 }
 .color-options input[value=black] + label::before {
   color: #444;
 }
-.color-options input:checked + label, .capacity-options input:checked + label, .carrier-options input:checked + label {
+.color-options input:checked + label, .capacity-options input:checked + label, .plan-options input:checked + label {
   border-color: var(--medium-warm-gray);
   border: solid 3px var(--medium-warm-gray);
+}
 
+/* ---------- S T Y L E   O P T I O N  #2 ---------- */
+
+.modal-content, .device-grid .card {
+  border-radius: 8px;
+}
+
+.modal-content {
+  border: none;
+  box-shadow: 0px 0px 7px rgba(150,150,150,0.1);
+}
+
+.btn {
+  font-family: 'Bookmania', serif;
+  padding-top: 8px;
+  border-radius: 0px;
+}
+.btn:focus {
+  box-shadow: 0 0 0px 0.00rem var(--alternate-hover);
+}
+.btn-sm {
+  padding-top: 6px;
+  font-size: .875rem;
+}
+input[type="submit"].btn, input[type="submit"].btn:not(:disabled):active {
+  background-color: var(--alternate);
+  border-color: var(--alternate);
+  color: white;
+}
+input[type="submit"].btn:hover {
+  background-color: var(--alternate-hover);
+  border-color: var(--alternate-hover);
+  color: white;
 }
