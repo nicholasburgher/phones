@@ -20,7 +20,7 @@ var device1 = new Device("Google", "Pixel 4", [64], [999], ["black"], "small", "
 devices.push(device1);
 var device2 = new Device("Samsung", "Galaxy A20", [32], [349], ["black"], "large", "images/devices/GalaxyA20.png", "SGA20");
 devices.push(device2);
-var device3 = new Device("Samsung", "Galaxy A01", [16], [249], ["black", "red", "blue"], "small", "images/devices/GalaxyA01.png", "SGA01");
+var device3 = new Device("Samsung", "Galaxy A01", [16], [249], ["black"], "small", "images/devices/GalaxyA01.png", "SGA01");
 devices.push(device3);
 var device4 = new Device("Nick's Brand","Super Phone",[8, 256],[100,699],["white","black"],"large","images/devices/demo.png","demo");
 devices.push(device4);
