@@ -15,15 +15,15 @@ var devices = [];
 
 //example device creation
 //var device0 = new Device("Google", "Pixel 4", [64, 128], [249, 350], ["white", "black", "red"], "small", "https://static.toiimg.com/thumb/msid-69219502,width-220,resizemode-4,imgv-5/Google-Pixel-4-XL.jpg", "GP4");
+//devices.push(device0);
+//When the page loads, the program will cycle through loading in cards for each device pushed to the "devices" array. If an item is not pushed to the array, it will not load.
 
-var device1 = new Device("Google", "Pixel 4", [64], [999], ["black"], "small", "images/devices/Pixel4.png", "GP4");
+var device1 = new Device("Samsung", "Galaxy A01", [16], [249], ["black"], "small", "images/devices/GalaxyA01.png", "SGA01");
 devices.push(device1);
 var device2 = new Device("Samsung", "Galaxy A20", [32], [349], ["black"], "large", "images/devices/GalaxyA20.png", "SGA20");
 devices.push(device2);
-var device3 = new Device("Samsung", "Galaxy A01", [16], [249], ["black"], "small", "images/devices/GalaxyA01.png", "SGA01");
+var device3 = new Device("Google", "Pixel 4", [64], [999], ["black"], "small", "images/devices/Pixel4.png", "GP4");
 devices.push(device3);
-var device4 = new Device("Nick's Brand","Super Phone",[8, 256],[100,699],["white","black"],"large","images/devices/demo.png","demo");
-devices.push(device4);
 
 //load page content
 
@@ -59,7 +59,7 @@ function loadPage() {
     contentBodyElem.appendChild(sizeClassElem);
     var priceElem = document.createElement("p");
     priceElem.classList.add("card-price");
-    priceElem.innerText = "Starting $" + Math.ceil(devices[i].prices[0]/12);
+    priceElem.innerText = "$" + Math.ceil(devices[i].prices[0]/12);
     contentBodyElem.appendChild(priceElem);
     //card text script can go here <div class="card-text"></div>
     var subTextElem = document.createElement("div");
@@ -81,19 +81,19 @@ function loadPage() {
     cardDivElem.appendChild(contentColElem);
     var dgLength = deviceGrid.childNodes.length;
     console.log("device grid length=" + dgLength);
-    deviceGrid.insertBefore(cardDivElem, deviceGrid.childNodes[dgLength - 7]);
+    deviceGrid.insertBefore(cardDivElem, deviceGrid.childNodes[dgLength - 5]);
   }
 };
 
-//fade in
+//fades in web content on load
 window.onload = function() {
   console.log("adding show");
   document.querySelector(".container-fluid").classList.add("show");
   loadPage();
 };
 
-//Flip Function CODE
-var deviceGrid = document.querySelector(".device-grid");
+//Flip Function CODE - for flipping cards when they are clicked
+var deviceGrid = document.querySelector(".main-content");
 
 function flip(targetID) {
   var cards = document.querySelectorAll(".device-grid .card");
@@ -102,9 +102,21 @@ function flip(targetID) {
   images[targetID].classList.toggle("flipped");
   deviceGrid.classList.toggle("off");
   setTimeout(function(){document.querySelector("#deviceModal1 .card-img").classList.toggle("off");}, 500);
+  console.log("Card " + targetID + " flipped");
 }
 
-//load modal CODE
+function flipReset(targetID) {
+  $('#deviceModal1').modal('hide');
+  var cards = document.querySelectorAll(".device-grid .card");
+  var images = document.querySelectorAll(".device-grid .img-column img");
+  cards[targetID].classList.remove("flipped");
+  images[targetID].classList.remove("flipped");
+  deviceGrid.classList.remove("off");
+  setTimeout(function(){document.querySelector("#deviceModal1 .card-img").classList.add("off");}, 500);
+  console.log("Card " + targetID + " reset function");
+}
+
+//load modal CODE - for when a card is selected
 function loadModal(i) {
   flip(i);
   //name and images
@@ -165,7 +177,7 @@ function loadModal(i) {
     divElem.appendChild(labelElem);
     capacityOptions.appendChild(divElem);
   }
-  //build payment Options
+  //update payment Options
   var plans = document.querySelectorAll("#deviceModal1 .plan-options .plan-price");
   var installmentPrice = plans[0];
   var upFrontPrice = plans[1];
@@ -174,11 +186,12 @@ function loadModal(i) {
   //update GTM tag
   var continueButton = document.querySelector("#deviceModal1 .modal-footer input[type='submit']");
   continueButton.setAttribute("id","submit" + devices[i].submitGTMTag);
-
-  document.querySelector("#deviceModal1 button.close").setAttribute("onclick","flip('" + i + "');");
+  //update flip script for close button and modal backdrop
+  document.querySelector("#deviceModal1 button.close").setAttribute("onclick","flipReset('" + i + "');");
+  setTimeout(function(){document.querySelector(".modal-backdrop").setAttribute("onclick","flipReset('" + i + "');");}, 500);
 }
 
-//update payment options subText
+//update payment Options subText
 function updatePaymentText(price) {
   var plans = document.querySelectorAll("#deviceModal1 .plan-options .plan-price");
   var installmentPrice = plans[0];
@@ -187,13 +200,14 @@ function updatePaymentText(price) {
   upFrontPrice.innerText = "Pay once $" + price;
 }
 
-//form validation CODE
+//form validation CODE - in case they haven't made a selection
 function validateForm(form) {
   console.log(form);
   var device = document.forms[form]["device"].value;
   var color = document.forms[form]["colors"].value;
   var capacity = document.forms[form]["capacity"].value;
   var plan = document.forms[form]["pplan"].value;
+  var qty = document.forms[form]["qty-select"].value;
   if (color == "") {
     alert("You must select a color");
     return false;
@@ -206,7 +220,7 @@ function validateForm(form) {
     alert("You must select a Payment Plan");
     return false;
   }
-  document.forms[form].setAttribute("action","index.html?device=" + device + "&color=" + color + "&capacity=" + capacity + "&pplan=" + plan );
+  document.forms[form].setAttribute("action","index.html?device=" + device + "&color=" + color + "&capacity=" + capacity + "&pplan=" + plan + "&qty=" + qty);
 }
 
-//version 1.2
+//version 1.3
